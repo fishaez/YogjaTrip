@@ -19,21 +19,22 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 30px;
     }
-    .day {
+    details {
       background: white;
       border-radius: 16px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       padding: 20px;
       margin-bottom: 20px;
     }
-    .day h2 {
+    summary {
+      font-size: 1.2em;
+      font-weight: bold;
       color: #0066b2;
-      border-bottom: 2px solid #cce0f5;
-      padding-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      cursor: pointer;
+      outline: none;
+      list-style: none;
     }
+    summary::-webkit-details-marker { display:none; } /* hide default marker */
     .time {
       color: #0066b2;
       font-weight: 600;
@@ -69,94 +70,98 @@
 <body>
   <h1>Singapore • Batam • Yogyakarta • Semarang Trip</h1>
 
-  <div id="itinerary">
+  <!-- Day 1 -->
+  <details open>
+    <summary>🌏 Sat, 29 Nov — Singapore</summary>
+    <div class="activity"><span class="time">12:25</span> Arrive Singapore Changi Airport</div>
+    <div class="activity"><span class="time">12:30 – 13:30</span> Immigration & luggage collection</div>
+    <div class="activity"><span class="time">13:30 – 14:30</span> Taxi to hotel near Bugis & check-in / freshen up</div>
+    <div class="activity"><span class="time">14:30 – 16:00</span> Explore Bugis Street & Bugis Junction</div>
+    <div class="activity"><span class="time">16:00 – 17:30</span> Quick sightseeing: Haji Lane, Arab Street</div>
+    <div class="activity"><span class="time">17:30 – 18:30</span> Return to hotel / rest</div>
+    <div class="activity"><span class="time">18:30 – 19:30</span> Dinner at nearby hawker center (optional: Lau Pa Sat)</div>
+    <div class="activity"><span class="time">19:45 – 20:30</span> Gardens by the Bay light show (optional)</div>
+    <div class="activity"><span class="time">20:30 – 22:00</span> Clarke Quay nightlife / stroll along Singapore River</div>
+  </details>
 
-    <div class="day">
-      <h2>🌏 Sat, 29 Nov — Singapore</h2>
-      <div class="activity"><span class="time">12:25</span> Arrive Singapore Changi Airport</div>
-      <div class="activity"><span class="time">12:30 – 13:30</span> Immigration & luggage collection</div>
-      <div class="activity"><span class="time">13:30 – 14:30</span> Taxi to hotel near Bugis & check-in / freshen up</div>
-      <div class="activity"><span class="time">14:30 – 16:00</span> Explore Bugis Street & Bugis Junction</div>
-      <div class="activity"><span class="time">16:00 – 17:30</span> Quick sightseeing: Haji Lane, Arab Street</div>
-      <div class="activity"><span class="time">17:30 – 18:30</span> Return to hotel / rest</div>
-      <div class="activity"><span class="time">18:30 – 19:30</span> Dinner at nearby hawker center (optional: Lau Pa Sat)</div>
-      <div class="activity"><span class="time">19:45 – 20:30</span> Gardens by the Bay light show (optional)</div>
-      <div class="activity"><span class="time">20:30 – 22:00</span> Clarke Quay nightlife / stroll along Singapore River</div>
+  <!-- Day 2 -->
+  <details>
+    <summary>⛴️ Sun, 30 Nov — Ferry to Batam</summary>
+    <div class="activity"><span class="time">06:30 – 08:30</span> Breakfast & transfer to ferry terminal</div>
+    <div class="activity"><span class="time">09:00 – 10:30</span> Ferry to Batam</div>
+    <div class="activity"><span class="time">10:30 – 11:00</span> Arrival & immigration in Batam</div>
+    <div class="activity"><span class="time">11:00 – 12:00</span> Taxi to hotel & check-in</div>
+    <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at nearby restaurant</div>
+    <div class="activity"><span class="time">13:30 – 16:00</span> Explore Batam city / Nagoya area / shopping at Nagoya Hill Mall</div>
+    <div class="activity"><span class="time">16:00 – 17:30</span> Relax at hotel or café (De’Patros, Anchor Café)</div>
+    <div class="activity"><span class="time">18:00 – 19:30</span> Dinner at Harbour Bay (seafood)</div>
+    <div class="activity"><span class="time">19:30 – 21:00</span> Optional: Night stroll or drinks at Nagoya nightlife spots</div>
+  </details>
+
+  <!-- Day 3 -->
+  <details>
+    <summary>🏝️ Mon, 1 Dec — Batam</summary>
+    <div class="activity"><span class="time">08:00 – 09:00</span> Breakfast at hotel</div>
+    <div class="activity"><span class="time">09:00 – 12:00</span> Morning free time / optional sightseeing (Barelang Bridge, Maha Vihara Duta Maitreya Temple)</div>
+    <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at local seafood restaurant</div>
+    <div class="activity"><span class="time">13:30 – 15:30</span> Optional spa / massage at Eska Spa or The Spa Secret</div>
+    <div class="activity"><span class="time">15:30 – 17:30</span> Explore local markets or relax at hotel</div>
+    <div class="activity"><span class="time">17:30 – 19:00</span> Dinner at Wey Wey Seafood</div>
+    <div class="activity"><span class="time">19:00 – 21:00</span> Evening massage or chill at café / dessert in Nagoya</div>
+  </details>
+
+  <!-- Day 4 -->
+  <details>
+    <summary>✈️ Tue, 2 Dec — Yogyakarta</summary>
+    <div class="activity"><span class="time">06:00 – 07:00</span> Breakfast & transfer to Batam airport</div>
+    <div class="activity"><span class="time">07:30 – 09:30</span> Flight to Yogyakarta</div>
+    <div class="activity"><span class="time">09:30 – 10:30</span> Arrival & taxi to hotel</div>
+    <div class="activity"><span class="time">10:30 – 12:00</span> Check-in & freshen up</div>
+    <div class="activity"><span class="time">12:00 – 13:30</span> Lunch near hotel</div>
+    <div class="activity"><span class="time">13:30 – 16:00</span> Explore Malioboro Street & Beringharjo Market</div>
+    <div class="activity"><span class="time">16:00 – 17:30</span> Coffee / snack at Prawirotaman or hotel break</div>
+    <div class="activity"><span class="time">17:30 – 19:00</span> Dinner near Tugu or House of Raminten</div>
+    <div class="activity"><span class="time">19:00 – 21:00</span> Evening activity: Alun-Alun Kidul LED car rides / Tempo Gelato / Teras Malioboro night market</div>
+  </details>
+
+  <!-- Day 5 -->
+  <details>
+    <summary>🕌 Wed, 3 Dec — Borobudur & Candirejo</summary>
+    <div class="activity"><span class="time">06:00 – 07:00</span> Breakfast at hotel</div>
+    <div class="activity"><span class="time">07:00 – 07:15</span> Depart to Borobudur Temple</div>
+    <div class="activity"><span class="time">07:15 – 11:30</span> Explore Borobudur Temple</div>
+    <div class="activity"><span class="time">11:30 – 12:30</span> Lunch near Borobudur</div>
+    <div class="activity"><span class="time">12:30 – 15:00</span> Candirejo Village tour (cycling / cultural tour)</div>
+    <div class="activity"><span class="time">15:00 – 17:00</span> Return to Yogyakarta city & rest</div>
+    <div class="activity"><span class="time">17:00 – 18:30</span> Dinner at Sate Klatak Pak Pong</div>
+    <div class="activity"><span class="time">19:30 – 21:00</span> Optional: Ramayana Ballet at Prambanan or café relaxation</div>
+  </details>
+
+  <!-- Day 6 -->
+  <details>
+    <summary>🚗 Thu, 4 Dec — Semarang Day Trip</summary>
+    <div class="activity"><span class="time">05:30 – 06:30</span> Breakfast at hotel</div>
+    <div class="activity"><span class="time">06:30 – 07:00</span> Depart to Semarang (3–3.5 hr drive/train)</div>
+    <div class="activity"><span class="time">10:30 – 12:00</span> Visit Lawang Sewu & Kota Lama</div>
+    <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at Spiegel Bistro</div>
+    <div class="activity"><span class="time">13:30 – 15:30</span> Explore Sam Poo Kong Temple</div>
+    <div class="activity"><span class="time">15:30 – 16:00</span> Quick snack or coffee break</div>
+    <div class="activity"><span class="time">16:00 – 19:30</span> Return to Yogyakarta</div>
+    <div class="activity"><span class="time">19:30 – 21:00</span> Dinner / relax at hotel</div>
+    <div class="evening">
+      🌉 Optional if staying in Semarang: Walk around Simpang Lima, Toko Oen dessert, evening lights at Kota Lama.
     </div>
+  </details>
 
-    <div class="day">
-      <h2>⛴️ Sun, 30 Nov — Ferry to Batam</h2>
-      <div class="activity"><span class="time">06:30 – 08:30</span> Breakfast & transfer to ferry terminal</div>
-      <div class="activity"><span class="time">09:00 – 10:30</span> Ferry to Batam</div>
-      <div class="activity"><span class="time">10:30 – 11:00</span> Arrival & immigration in Batam</div>
-      <div class="activity"><span class="time">11:00 – 12:00</span> Taxi to hotel & check-in</div>
-      <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at nearby restaurant</div>
-      <div class="activity"><span class="time">13:30 – 16:00</span> Explore Batam city / Nagoya area / shopping at Nagoya Hill Mall</div>
-      <div class="activity"><span class="time">16:00 – 17:30</span> Relax at hotel or café (De’Patros, Anchor Café)</div>
-      <div class="activity"><span class="time">18:00 – 19:30</span> Dinner at Harbour Bay (seafood)</div>
-      <div class="activity"><span class="time">19:30 – 21:00</span> Optional: Night stroll or drinks at Nagoya nightlife spots</div>
-    </div>
+  <!-- Day 7 -->
+  <details>
+    <summary>✈️ Fri, 5 Dec — Departure</summary>
+    <div class="activity"><span class="time">07:00 – 08:00</span> Breakfast at hotel / Kopi Klotok</div>
+    <div class="activity"><span class="time">08:00 – 10:00</span> Souvenir shopping (Bakpia, Malioboro)</div>
+    <div class="activity"><span class="time">10:00 – 11:30</span> Hotel checkout & transfer to airport</div>
+    <div class="activity"><span class="time">11:30 – 12:30</span> Light lunch near airport</div>
+    <div class="activity"><span class="time">13:40 – 15:00</span> Flight Yogyakarta → Jakarta (CGK)</div>
+  </details>
 
-    <div class="day">
-      <h2>🏝️ Mon, 1 Dec — Batam</h2>
-      <div class="activity"><span class="time">08:00 – 09:00</span> Breakfast at hotel</div>
-      <div class="activity"><span class="time">09:00 – 12:00</span> Morning free time / optional sightseeing (Barelang Bridge, Maha Vihara Duta Maitreya Temple)</div>
-      <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at local seafood restaurant</div>
-      <div class="activity"><span class="time">13:30 – 15:30</span> Optional spa / massage at Eska Spa or The Spa Secret</div>
-      <div class="activity"><span class="time">15:30 – 17:30</span> Explore local markets or relax at hotel</div>
-      <div class="activity"><span class="time">17:30 – 19:00</span> Dinner at Wey Wey Seafood</div>
-      <div class="activity"><span class="time">19:00 – 21:00</span> Evening massage or chill at café / dessert in Nagoya</div>
-    </div>
-
-    <div class="day">
-      <h2>✈️ Tue, 2 Dec — Yogyakarta</h2>
-      <div class="activity"><span class="time">06:00 – 07:00</span> Breakfast & transfer to Batam airport</div>
-      <div class="activity"><span class="time">07:30 – 09:30</span> Flight to Yogyakarta</div>
-      <div class="activity"><span class="time">09:30 – 10:30</span> Arrival & taxi to hotel</div>
-      <div class="activity"><span class="time">10:30 – 12:00</span> Check-in & freshen up</div>
-      <div class="activity"><span class="time">12:00 – 13:30</span> Lunch near hotel</div>
-      <div class="activity"><span class="time">13:30 – 16:00</span> Explore Malioboro Street & Beringharjo Market</div>
-      <div class="activity"><span class="time">16:00 – 17:30</span> Coffee / snack at Prawirotaman or hotel break</div>
-      <div class="activity"><span class="time">17:30 – 19:00</span> Dinner near Tugu or House of Raminten</div>
-      <div class="activity"><span class="time">19:00 – 21:00</span> Evening activity: Alun-Alun Kidul LED car rides / Tempo Gelato / Teras Malioboro night market</div>
-    </div>
-
-    <div class="day">
-      <h2>🕌 Wed, 3 Dec — Borobudur & Candirejo</h2>
-      <div class="activity"><span class="time">06:00 – 07:00</span> Breakfast at hotel</div>
-      <div class="activity"><span class="time">07:00 – 07:15</span> Depart to Borobudur Temple</div>
-      <div class="activity"><span class="time">07:15 – 11:30</span> Explore Borobudur Temple</div>
-      <div class="activity"><span class="time">11:30 – 12:30</span> Lunch near Borobudur</div>
-      <div class="activity"><span class="time">12:30 – 15:00</span> Candirejo Village tour (cycling / cultural tour)</div>
-      <div class="activity"><span class="time">15:00 – 17:00</span> Return to Yogyakarta city & rest</div>
-      <div class="activity"><span class="time">17:00 – 18:30</span> Dinner at Sate Klatak Pak Pong</div>
-      <div class="activity"><span class="time">19:30 – 21:00</span> Optional: Ramayana Ballet at Prambanan or café relaxation</div>
-    </div>
-
-    <div class="day">
-      <h2>🚗 Thu, 4 Dec — Semarang Day Trip</h2>
-      <div class="activity"><span class="time">05:30 – 06:30</span> Breakfast at hotel</div>
-      <div class="activity"><span class="time">06:30 – 07:00</span> Depart to Semarang (3–3.5 hr drive/train)</div>
-      <div class="activity"><span class="time">10:30 – 12:00</span> Visit Lawang Sewu & Kota Lama</div>
-      <div class="activity"><span class="time">12:00 – 13:30</span> Lunch at Spiegel Bistro</div>
-      <div class="activity"><span class="time">13:30 – 15:30</span> Explore Sam Poo Kong Temple</div>
-      <div class="activity"><span class="time">15:30 – 16:00</span> Quick snack or coffee break</div>
-      <div class="activity"><span class="time">16:00 – 19:30</span> Return to Yogyakarta</div>
-      <div class="activity"><span class="time">19:30 – 21:00</span> Dinner / relax at hotel</div>
-      <div class="evening">
-        🌉 Optional if staying in Semarang: Walk around Simpang Lima, Toko Oen dessert, evening lights at Kota Lama.
-      </div>
-    </div>
-
-    <div class="day">
-      <h2>✈️ Fri, 5 Dec — Departure</h2>
-      <div class="activity"><span class="time">07:00 – 08:00</span> Breakfast at hotel / Kopi Klotok</div>
-      <div class="activity"><span class="time">08:00 – 10:00</span> Souvenir shopping (Bakpia, Malioboro)</div>
-      <div class="activity"><span class="time">10:00 – 11:30</span> Hotel checkout & transfer to airport</div>
-      <div class="activity"><span class="time">11:30 – 12:30</span> Light lunch near airport</div>
-      <div class="activity"><span class="time">13:40 – 15:00</span> Flight Yogyakarta → Jakarta (CGK)</div>
-    </div>
-
-  </div>
 </body>
 </html>
