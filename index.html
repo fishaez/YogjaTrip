@@ -1,252 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trip Itinerary — 29 Nov 2025 to 5 Dec 2025</title>
-  <meta name="description" content="Itinerary: Singapore, Batam, Jakarta, Yogyakarta, Semarang (29 Nov - 5 Dec 2025)" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Itinerary: Nov 29 – Dec 5, 2025</title>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4;--glass: rgba(255,255,255,0.04);--card-2:#071026}
-    *{box-sizing:border-box}
-    body{font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial; margin:0; background:linear-gradient(180deg,#071428 0%, #071428 60%, #041426 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    .wrap{max-width:1100px;margin:36px auto;padding:28px}
-    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(7,18,36,0.6)}
-    .logo svg{width:36px;height:36px}
-    h1{margin:0;font-size:20px}
-    p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    .controls{display:flex;gap:8px;margin-left:auto}
-    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer;font-weight:600;font-size:13px}
-    .btn.secondary{color:var(--muted);background:transparent;border:1px dashed rgba(255,255,255,0.03)}
-
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-
-    /* itinerary column */
-    .itinerary{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .day{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:14px;border-radius:10px;margin-bottom:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    .day .meta{font-size:13px;color:var(--muted)}
-    .day .meta .date{font-weight:700;color:#fff;margin-bottom:6px}
-    .events{display:flex;flex-direction:column;gap:8px}
-    .event{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
-    .time{min-width:86px;font-weight:700;color:var(--accent);font-size:13px}
-    .desc{font-size:14px;color:#e6eef6}
-    .desc .sub{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-
-    /* right column */
-    .sidebar{position:sticky;top:28px;height:fit-content;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
-    .trip-summary{font-size:13px;color:var(--muted);margin-bottom:12px}
-    .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02);font-weight:700;margin-right:6px}
-
-    .map-embed{height:200px;border-radius:10px;background:linear-gradient(180deg,#031726,#071428);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
-
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* responsive */
-    @media (max-width:880px){.grid{grid-template-columns:1fr}.controls{display:none}.sidebar{position:static;margin-top:12px}}
-
-    /* printable */
-    @media print{body{background:white;color:black} .wrap{box-shadow:none} .logo{display:none}}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #70c1ff, #a5d8ff);
+      color: #003049;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .day {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1.5rem;
+    }
+    .day:last-child {
+      border-bottom: none;
+    }
+    .day h2 {
+      color: #0077b6;
+      margin-top: 0;
+    }
+    .location {
+      font-weight: 600;
+      color: #023e8a;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    .highlight {
+      background: #e0f7ff;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo" aria-hidden>
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9S3 17 3 12z" fill="white" opacity="0.06"/><path d="M7 12h10M12 7v10" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg>
-      </div>
-      <div>
-        <h1>Trip Itinerary — 29 Nov 2025 → 05 Dec 2025</h1>
-        <p class="lead">Singapore ▶ Batam ▶ Jakarta ▶ Yogyakarta ▶ Semarang — Clean & printable HTML version for GitHub</p>
-      </div>
-      <div class="controls">
-        <button class="btn" onclick="toggleCompact()">Toggle compact</button>
-        <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
-      </div>
-    </header>
+  <header>
+    <h1>Travel Itinerary: Nov 29 – Dec 5, 2025</h1>
+    <p>Singapore • Batam • Jakarta • Yogyakarta • Semarang</p>
+  </header>
 
-    <main class="grid">
-      <section class="itinerary" id="itinerary">
+  <div class="container">
+    <div class="day">
+      <h2>Day 1 – Nov 29 (Sat): Singapore Arrival</h2>
+      <p><span class="location">Arrival:</span> Singapore Changi Airport</p>
+      <p>Explore Bugis, Marina Bay, and nearby cafés before taking the evening ferry to Batam.</p>
+    </div>
 
-        <!-- Day card: Sabtu 29-11-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Sabtu<br><strong>29-11-2025</strong></div>
-            <div class="meta-sub">Arrival: Singapore</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">07.00 - 09.00</div><div class="desc">Otw to Airport & Check In</div></div>
-            <div class="event"><div class="time">09.35 - 12.25</div><div class="desc">Flight to Singapore</div></div>
-            <div class="event"><div class="time">12.25 - 13.00</div><div class="desc">Landing — Immigration — Luggage</div></div>
-            <div class="event"><div class="time">13.00 - 14.00</div><div class="desc">Otw to Hotel & Check In <span class="sub">York Hotel</span></div></div>
-            <div class="event"><div class="time">14.00 - 16.00</div><div class="desc">Bugis — explore shops & cafes</div></div>
-          </div>
-        </article>
+    <div class="day">
+      <h2>Day 2 – Nov 30 (Sun): Batam to Jakarta</h2>
+      <p><span class="location">Morning:</span> Breakfast in Batam</p>
+      <p><span class="location">Afternoon:</span> Ferry back to Singapore, then flight to Jakarta (arrive ~12:25pm)</p>
+      <p><span class="location">Evening:</span> Dinner near hotel, light sightseeing in Jakarta</p>
+    </div>
 
-        <!-- Day card: Sunday 30-11-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Sunday<br><strong>30-11-2025</strong></div>
-            <div class="meta-sub">Transit to Batam</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">06.00 - 07.00</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">07.00 - 10.00</div><div class="desc">Breakfast at? — suggestions: Bugis cafes, Lau Pa Sat (if near), or local kopitiam</div></div>
-            <div class="event"><div class="time">10.00 - 11.30</div><div class="desc">Back to Hotel and check out</div></div>
-            <div class="event"><div class="time">11.30 - 13.00</div><div class="desc">Lunch</div></div>
-            <div class="event"><div class="time">13.00 - 15.00</div><div class="desc">Otw to Batam (ferry)</div></div>
-            <div class="event"><div class="time">15.00 - 16.30</div><div class="desc">Check in to Hotel</div></div>
-            <div class="event"><div class="time">16.30 - 20.30</div><div class="desc">Dinner + Buy fruit and others</div></div>
-            <div class="event"><div class="time">20.30</div><div class="desc">Back to Hotel and rest</div></div>
-          </div>
-        </article>
+    <div class="day">
+      <h2>Day 3 – Dec 1 (Mon): Jakarta to Yogyakarta</h2>
+      <p>Morning flight to Yogyakarta. Visit <span class="highlight">Malioboro Street</span>, Kraton Palace, and Taman Sari.</p>
+      <p><span class="location">Stay:</span> Central Yogyakarta Airbnb</p>
+    </div>
 
-        <!-- Day card: Monday 01-12-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Monday<br><strong>01-12-2025</strong></div>
-            <div class="meta-sub">Ceremony & bhante</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">05.00 - 06.30</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">06.30 - 07.30</div><div class="desc">Breakfast at Hotel</div></div>
-            <div class="event"><div class="time">07.30 - 09.30</div><div class="desc">Buy Food for bhante</div></div>
-            <div class="event"><div class="time">09.30 - 10.30</div><div class="desc">Jemput bhante</div></div>
-            <div class="event"><div class="time">10.30 - 13.00</div><div class="desc">Dana makan + pemberkahan rumah</div></div>
-            <div class="event"><div class="time">13.00 - 14.00</div><div class="desc">Antar bhante</div></div>
-          </div>
-        </article>
+    <div class="day">
+      <h2>Day 4 – Dec 2 (Tue): Yogyakarta Temples</h2>
+      <p>Visit <span class="highlight">Borobudur</span> and <span class="highlight">Prambanan</span>. Optional visit to local art markets.</p>
+    </div>
 
-        <!-- Day card: Tuesday 02-12-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Tuesday<br><strong>02-12-2025</strong></div>
-            <div class="meta-sub">Flight: Batam → Jakarta → Yogyakarta</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">04.00 - 06.00</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">06.00 - 06.30</div><div class="desc">Otw to Airport</div></div>
-            <div class="event"><div class="time">06.30 - 07.30</div><div class="desc">Check In + breakfast maybe</div></div>
-            <div class="event"><div class="time">08.05 - 09.45</div><div class="desc">Flight to Jakarta — <span class="sub">Citilink T1</span></div></div>
-            <div class="event"><div class="time">09.45 - 11.30</div><div class="desc">Transfer from T1 to T3 — Skytrain at T1B</div></div>
-            <div class="event"><div class="time">11.30 - 12.50</div><div class="desc">Flight to Yogyakarta (YIA) — <span class="sub">Garuda T3</span></div></div>
-            <div class="event"><div class="time">12.50 - 13.30</div><div class="desc">Landing + ambil koper + Meet driver?</div></div>
-            <div class="event"><div class="time">13.30 - 14.30</div><div class="desc">Otw to city — Tempo Gelato Prawirotaman / Gudeg Sagan</div></div>
-            <div class="event"><div class="time">14.30 - 15.30</div><div class="desc">Tempo Gelato / Gudeg Sagan</div></div>
-            <div class="event"><div class="time">15.30 - 16.30</div><div class="desc">Otw to Hotel + Check in to Hotel</div></div>
-            <div class="event"><div class="time">16.30 - 17.00</div><div class="desc">Otw to Malioboro</div></div>
-            <div class="event"><div class="time">17.00 - 20.00</div><div class="desc">Malioboro — teras malioboro, pasar beringharjo, hamzah batik — gudeg Yu Jum — Lupia Samijaya <span class="sub">(Dinner at teras malioboro?)</span></div></div>
-          </div>
-        </article>
+    <div class="day">
+      <h2>Day 5 – Dec 3 (Wed): Yogyakarta to Semarang</h2>
+      <p>Drive to Semarang (approx 3.5–4 hrs). Explore Lawang Sewu and Kota Lama.</p>
+    </div>
 
-        <!-- Day card: Wednesday 03-12-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Wednesday<br><strong>03-12-2025</strong></div>
-            <div class="meta-sub">Borobudur & Candirejo</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">06.00 - 07.00</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">07.00 - 08.00</div><div class="desc">Breakfast</div></div>
-            <div class="event"><div class="time">08.00 - 09.00</div><div class="desc">Otw to Borobudur</div></div>
-            <div class="event"><div class="time">09.00 - 11.00</div><div class="desc">Borobudur visit</div></div>
-            <div class="event"><div class="time">11.00 - 13.00</div><div class="desc">Lunch — trumtum gasblock Borobudur?</div></div>
-            <div class="event"><div class="time">13.00 - 16.00</div><div class="desc">desa wisata Candirejo?</div></div>
-            <div class="event"><div class="time">16.00 - 17.00</div><div class="desc">Otw to (back to hotel / city)</div></div>
-            <div class="event"><div class="time">Evening</div><div class="desc">Dinner di Bale Raos / House of Raminten</div></div>
-          </div>
-        </article>
+    <div class="day">
+      <h2>Day 6 – Dec 4 (Thu): Semarang</h2>
+      <p>Relax, try local cuisine (Lumpia Semarang, Wingko Babat). Prepare for next-day return.</p>
+    </div>
 
-        <!-- Day card: Thursday 04-12-2025 (Semarang daytrip) -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Thursday<br><strong>04-12-2025</strong></div>
-            <div class="meta-sub">Semarang daytrip — then back to Jogja</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">05.00 - 06.00</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">06.00 - 07.00</div><div class="desc">Breakfast</div></div>
-            <div class="event"><div class="time">07.00 - 10.00</div><div class="desc">Otw to Semarang</div></div>
-            <div class="event"><div class="time">10.00 - 11.00</div><div class="desc">Sam Po Kong</div></div>
-            <div class="event"><div class="time">11.00 - 13.30</div><div class="desc">Lunch — Nasi ayam Bu Pini + Lumpia gang Lombok</div></div>
-            <div class="event"><div class="time">13.30 - 14.30</div><div class="desc">Lawang Sewu</div></div>
-            <div class="event"><div class="time">14.30 - 15.30</div><div class="desc">Juwana</div></div>
-            <div class="event"><div class="time">15.30 - 16.30</div><div class="desc">WM Kelengan / toko oen</div></div>
-            <div class="event"><div class="time">16.30 - 19.30</div><div class="desc">Otw to Jogja — Back To Hotel — Rest</div></div>
-          </div>
-        </article>
-
-        <!-- Day card: Thursday (Yogyakarta attractions) -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Thursday<br><strong>04-12-2025</strong></div>
-            <div class="meta-sub">Yogyakarta — Taman Sari & Prambanan</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">06.00 - 08.00</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">08.00 - 09.00</div><div class="desc">Breakfast</div></div>
-            <div class="event"><div class="time">09.00 - 09.30</div><div class="desc">Otw to Taman Sari Tourist Village</div></div>
-            <div class="event"><div class="time">09.30 - 10.30</div><div class="desc">Taman Sari Tourist Village</div></div>
-            <div class="event"><div class="time">10.30 - 11.30</div><div class="desc">Otw to Omah Cantrik</div></div>
-            <div class="event"><div class="time">11.30 - 14.00</div><div class="desc">Omah Cantrik</div></div>
-            <div class="event"><div class="time">14.00 - 15.30</div><div class="desc">Otw to Prambanan Temple</div></div>
-            <div class="event"><div class="time">15.30 - 16.30</div><div class="desc">Prambanan visit</div></div>
-          </div>
-        </article>
-
-        <!-- Day card: Friday 05-12-2025 -->
-        <article class="day">
-          <div class="meta">
-            <div class="date">Friday<br><strong>05-12-2025</strong></div>
-            <div class="meta-sub">Departure day</div>
-          </div>
-          <div class="events">
-            <div class="event"><div class="time">06.00 - 07.30</div><div class="desc">Wake up & be ready</div></div>
-            <div class="event"><div class="time">07.30 - 09.00</div><div class="desc">Breakfast</div></div>
-            <div class="event"><div class="time">09.00 - 09.30</div><div class="desc">Check Out</div></div>
-            <div class="event"><div class="time">09.30 - 10.00</div><div class="desc">Bakpia Kurnia</div></div>
-            <div class="event"><div class="time">After</div><div class="desc">Otw to Airport</div></div>
-          </div>
-        </article>
-
-      </section>
-
-      <aside class="sidebar">
-        <div class="trip-summary">
-          <div><span class="pill">Dates</span> <strong>29 Nov 2025 — 05 Dec 2025</strong></div>
-          <div style="margin-top:8px;"><span class="pill">Route</span> Singapore → Batam → Jakarta → Yogyakarta → Semarang → Jogja → Airport</div>
-          <div style="margin-top:8px;"><span class="pill">Main highlights</span> Borobudur, Prambanan, Malioboro, Sam Po Kong, Lawang Sewu</div>
-        </div>
-
-        <div class="map-embed">Map placeholder — paste your Google Maps embed here</div>
-
-        <details style="margin-top:12px;color:var(--muted)">
-          <summary style="cursor:pointer;font-weight:700;color:#fff">Tips & notes</summary>
-          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
-            <li>Allow 1.5–2 hrs for airport transfers & early check-in queues.</li>
-            <li>Keep ferry/flight booking confirmations & passports handy during transit days.</li>
-            <li>For Borobudur, an early morning visit reduces heat & crowds.</li>
-            <li>Semarang is a long drive from Jogja — expect 2.5–3.5 hrs each way depending on traffic.</li>
-          </ul>
-        </details>
-
-        <div style="margin-top:12px;font-size:13px;color:var(--muted)">
-          <strong>Want changes?</strong>
-          <div style="margin-top:6px">You can edit times, swap activities, or add addresses. Commit the file to GitHub and open a pull request for versioning.</div>
-        </div>
-      </aside>
-
-    </main>
-
-    <footer>
-      Exported: Itinerary HTML • Designed for GitHub viewing & printing
-    </footer>
+    <div class="day">
+      <h2>Day 7 – Dec 5 (Fri): Semarang to Jakarta</h2>
+      <p>Morning: Return drive to airport (CGK flight 13:40–15:00).</p>
+      <p>End of trip ✈️</p>
+    </div>
   </div>
 
-  <script>
-    let compact=false;
-    function toggleCompact(){document.getElementById('itinerary').classList.toggle('compact');compact=!compact;document.querySelectorAll('.time').forEach(t=>t.style.display = compact? 'none':'inline-block');}
-  </script>
+  <footer>
+    <p>Created by Yonas • 2025</p>
+  </footer>
 </body>
 </html>
-
